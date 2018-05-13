@@ -1,0 +1,5 @@
+export { default as SignUpPage } from './SignUp'
+export { default as SignInPage } from './SignIn'
+export { default as SignOutPage } from './SignOut'
+export { default as PasswordForgetPage } from './PasswordForget'
+export { default as PasswordChangePage } from './PasswordChange'

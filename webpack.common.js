@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VENDOR_LIBS = [
   'axios', 'prop-types', 'react', 'react-dom', 'react-redux', 'react-router-dom',
-  'redux', 'redux-thunk', 'redux-logger'
+  'redux', 'redux-saga'
 ]
 module.exports = {
   entry: {
@@ -16,10 +16,9 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   resolve: {
-    modules: [
-      path.join(__dirname, "src"),
-      "node_modules"
-    ]
+    alias: {
+      src: path.resolve('./src')
+    }
   },
   module: {
     rules: [
@@ -57,7 +56,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      //favicon: 'src/assets/favicon.ico'
+      favicon: 'src/assets/favicon.ico'
     }),
   ]
 }

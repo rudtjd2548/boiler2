@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 var env = process.env.NODE_ENV || 'development';
-var config = require('./config')[env];
+var config = require('./src/constants/config')[env];
 
 var app = express();
 var PORT = process.env.PORT || 8080;
